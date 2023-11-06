@@ -1,0 +1,60 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px; 
+    background-color: #fff; 
+    
+    .logo {
+      font-size: 24px; 
+      font-weight: bold; 
+      color: #000; 
+  
+      
+      img {
+        height: 60px; 
+      }
+    }
+  
+    .navigation {
+        font-family: 'Montserrat', sans-serif;
+        ul {
+          list-style: none; 
+          padding: 0; 
+          margin: 0; 
+          display: flex; 
+          gap: 57px;
+      
+          li {
+            margin-right: 20px; 
+      
+            &:last-child {
+              margin-right: 0; 
+            }
+          }
+        }
+      
+        a {
+          text-decoration: none; 
+          color: #FF6060; 
+      
+          &:hover {
+            text-decoration: underline; 
+          }
+        }
+      }
+      
+}
+
+
+  
+  // Utilisez des media queries pour gérer le responsive design, par exemple :
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      .logo {
+        margin-bottom: 20px; // Ajustez selon votre maquette
+      }
+    }
+  }
+  

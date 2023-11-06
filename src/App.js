@@ -4,10 +4,12 @@ import Accueil from './pages/accueil';
 import APropos from './pages/a_propos'; 
 import Logement from './pages/logement';
 import PageErreur from './pages/page_erreur';
+import Header from './components/header';
 
 function App() {
   return (
     <Router>
+      <Header />
       <div>
         <Routes>
           <Route path="/accueil" element={<Accueil />} />
