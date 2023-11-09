@@ -5,6 +5,7 @@ import APropos from './pages/a_propos';
 import Logement from './pages/logement';
 import PageErreur from './pages/page_erreur';
 import Header from './components/header';
+import Footer from './components/footer'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/page_erreur" element={<PageErreur />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }

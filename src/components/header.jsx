@@ -1,4 +1,3 @@
-// Header.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/header.scss'; // Assurez-vous que le chemin est correct
