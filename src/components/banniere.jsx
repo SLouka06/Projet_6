@@ -1,13 +1,11 @@
 import React from 'react';
 import '../styles/banniere.scss';
-import bannerImage from "../assets/banner_img.jpg";
 
-function Banniere() {
+function Banniere({ image, texte }) {
   return (
-    <div className="banniere" style={{ backgroundImage: `url(${bannerImage})` }}>
-      <h1>Chez vous, partout et ailleurs</h1>
+    <div className="Banniere" style={{ backgroundImage: `url(${image})` }}>
+      {texte && <h1>{texte}</h1>}
     </div>
   );
 }
-
 export default Banniere;

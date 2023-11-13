@@ -1,3 +1,3 @@
-function Logement(){}
+function logement (){}
 
-export default Logement
+export default logement

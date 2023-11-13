@@ -1,14 +1,15 @@
-.banniere {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 26vh; 
-    margin: 50px;
-    border-radius: 25px;
-    background-size: cover;
-    background-position: center;
-    position: relative; 
-    overflow: hidden; 
+.Banniere {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26vh; // ou la hauteur désirée
+  margin: 50px;
+  border-radius: 25px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+
     
     &::before {
       content: '';
@@ -33,3 +34,6 @@
       color: white; 
     }
   }
+
+
+  
