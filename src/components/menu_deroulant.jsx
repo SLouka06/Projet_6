@@ -17,12 +17,16 @@ function MenuDeroulant({ titre, contenu }) {
           <img src={flecheImage} alt="Flèche" />
         </div>
       </div>
-      <div className="contenu-menu">
+      <div className={`contenu-menu ${estOuvert ? 'estOuvert' : ''}`}>
         {contenu}
       </div>
     </div>
   );
 }
+
+
+
+
 
 export default MenuDeroulant;
 

@@ -1,59 +1,78 @@
+$menu-height: 1000px;
+$menu-bg-color: #FF6600;
+$menu-title-bg-color: #FF6060;
+$menu-content-bg-color: #F6F6F6;
+
+@keyframes ouvrirMenu {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: $menu-height;
+  }
+}
+
 .menu-deroulant {
   display: flex;
-  flex-direction: column; // Changez la direction pour permettre l'expansion verticale
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
   width: 70vw;
   max-width: 1024px;
   margin: 30px auto;
-  background-color: #FF6600; // Couleur du menu principal
+  background-color: $menu-bg-color;
   box-sizing: border-box;
-}
+  border-radius: 5px;
 
-.titre-menu {
-  color: #FFFFFF;
-  padding-left: 15px;
-  width: 100%; // Assurez-vous que le titre s'étend sur toute la largeur
-  height: 59px; // Hauteur fixe pour le titre
-  background-color: #FF6060; // Couleur de fond pour le titre
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-}
+  .titre-menu {
+    color: #FFFFFF;
+    font-size: 24px;
+    padding-left: 15px;
+    width: 100%;
+    height: 59px;
+    background-color: $menu-title-bg-color;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
 
-.fleche {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-  position: absolute; // Positionnez absolument par rapport au .menu-deroulant
-  right: 0; // À droite du conteneur
-  top: 0; // En haut du conteneur
-  height: 59px; // Hauteur fixe pour aligner avec le titre
-  box-sizing: border-box;
-  padding: 10px;
-}
+  .fleche {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 59px;
+    box-sizing: border-box;
+    padding: 10px;
+  }
 
-.menu-deroulant.estOuvert .fleche {
-  transform: rotate(180deg);
-}
+  &.estOuvert .fleche {
+    transform: rotate(-180deg);
+  }
 
-.contenu-menu {
-  display: none;
-  width: 100%; // Compense les 15px de padding de chaque côté
-  background-color: #F6F6F6;
-  box-sizing: border-box; // Assure que padding et border sont inclus dans la largeur
-  padding: 10px;
-  margin: 0 auto; // Ajoute un margin pour aligner avec le titre
-}
+  .contenu-menu {
+    display: none;
+    width: 100%;
+    background-color: $menu-content-bg-color;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 0 auto;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    animation: ouvrirMenu 0.3s ease-in-out forwards;
+  }
 
-.menu-deroulant.estOuvert .contenu-menu {
-  display: flex;
-}
+  &.estOuvert .contenu-menu {
+    display: flex;
+  }
 
-
-.contenu-menu p {
-  color: #000; // Ou toute autre couleur visible sur le fond #F6F6F6
-  // ... autres styles de texte que vous pourriez vouloir
+  .contenu-menu p {
+    color: $menu-title-bg-color;
+    font-size: 18px;
+  }
 }
