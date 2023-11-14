@@ -13,10 +13,10 @@ function App() {
       <Header />
       <div>
         <Routes>
-          <Route path="/accueil" element={<Accueil />} />
+          <Route path="/" element={<Accueil />} />
           <Route path="/a-propos" element={<APropos />} />
           <Route path="/logement" element={<Logement />} />
-          <Route path="/page_erreur" element={<PageErreur />} />
+          <Route path="*" element={<PageErreur />} />
         </Routes>
       </div>
       <Footer />
