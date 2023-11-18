@@ -21,7 +21,6 @@ $menu-content-bg-color: #F6F6F6;
   width: 70vw;
   max-width: 1024px;
   margin: 30px auto;
-  background-color: $menu-bg-color;
   box-sizing: border-box;
   border-radius: 5px;
 
@@ -65,6 +64,7 @@ $menu-content-bg-color: #F6F6F6;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     animation: ouvrirMenu 0.3s ease-in-out forwards;
+    color: #FF6060;
   }
 
   &.estOuvert .contenu-menu {
