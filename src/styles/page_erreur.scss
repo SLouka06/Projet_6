@@ -1,25 +1,45 @@
+$error-color: #ff6060;
+$error-padding-top: 139px;
+$error-font-size-large: 288px;
+$error-font-size-small: 96px;
+$error-message-font-size: 36px;
+$error-message-font-size-mobile: 18px;
+
 .error-container {
-    text-align: center;
-    padding: 20px;
-  }
-  
+  text-align: center;
+  padding: 20px;
+
   .error-number {
-    color: #ff6060;
-    font-size: 288px; 
-    padding-top: 139px;
+    color: $error-color;
+    font-size: $error-font-size-large;
+    padding-top: $error-padding-top;
   }
   
   .error-message {
     margin: 20px 0;
-    color: #ff6060;
-    font-size: 36px;
-    padding-top: 139px;
+    color: $error-color;
+    font-size: $error-message-font-size;
+    padding-top: $error-padding-top;
+
+    @media (max-width: 768px) {
+      font-size: $error-message-font-size-mobile;
+
+      .error-message-break {
+        display: block; 
+      }
+    }
   }
-  
   .error-home-link {
     display: block;
-    color: #ff6060; 
+    color: $error-color;
     text-decoration: underline;
-    padding: 139px 0px;
+    padding: $error-padding-top 0px;
   }
-  
+
+  @media (max-width: 768px) {
+    .error-number {
+      font-size: $error-font-size-small;
+      padding-top: 70px; 
+    }
+  }
+}

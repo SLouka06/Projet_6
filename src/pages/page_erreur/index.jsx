@@ -7,7 +7,7 @@ function Page_erreur() {
   return (
     <div className="error-container">
       <h1 className="error-number">404</h1>
-      <p className="error-message">Oups! La page que vous demandez n'existe pas.</p>
+      <p className="error-message"> Oups! La page que <span className="error-message-break">vous demandez n'existe pas.</span></p>
       <Link to="/" className="error-home-link">Retourner sur la page d'accueil</Link>
     </div>
   );
