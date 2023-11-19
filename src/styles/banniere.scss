@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 26vh; // ou la hauteur désirée
+  min-height: 26vh; 
   margin: 50px;
   border-radius: 25px;
   background-size: cover;
@@ -10,30 +10,44 @@
   position: relative;
   overflow: hidden;
 
-    
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: rgba(0, 0, 0, 0.3); 
-      z-index: 1;
-    }
-  
-    
-    & > * {
-      position: relative;
-      z-index: 2;
-    }
-  
-    h1 {
-      font-size: 48px;
-      font-weight: 500;
-      color: white; 
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
   }
 
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    font-size: 48px;
+    font-weight: 500;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+  }
 
   
+  @media (max-width: 768px) {
+    height: 111px; 
+    margin: 20px;
+    justify-content: flex-start;
+    min-height: 20vh;
+
+    h1 {
+      font-size: 30px;
+      padding-left: 30px;
+      width: 100%;
+    }
+
+    .responsive-break {
+      display: block;
+    }
+  }
+}

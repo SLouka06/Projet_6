@@ -17,7 +17,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: 'montserrat';
+	font-family: 'Montserrat', sans-serif;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -34,6 +34,7 @@ body {
 }
 menu, ol, ul {
 	list-style: none;
+	
 }
 
 li{

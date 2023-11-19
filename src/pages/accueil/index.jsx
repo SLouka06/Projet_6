@@ -16,7 +16,7 @@ function Accueil() {
 
   return (
     <div>
-      <Banniere image={bannerImage} texte="Chez vous, partout et ailleurs" />
+      <Banniere image={bannerImage} texte={<><span>Chez vous,</span> <span className="responsive-break">partout et ailleurs</span></>} />
       <div className="accueil-cards-container">
         {sixPremieresAnnonces.map((annonce) => (
           <div key={annonce.id} onClick={() => handleCardClick(annonce.id)} style={{ cursor: 'pointer' }}>
