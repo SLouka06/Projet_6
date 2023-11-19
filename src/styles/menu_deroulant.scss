@@ -1,16 +1,6 @@
-$menu-height: 1000px;
-$menu-bg-color: #FF6600;
 $menu-title-bg-color: #FF6060;
 $menu-content-bg-color: #F6F6F6;
-
-@keyframes ouvrirMenu {
-  from {
-    max-height: 0;
-  }
-  to {
-    max-height: $menu-height;
-  }
-}
+$max-height: 500px; 
 
 .menu-deroulant {
   display: flex;
@@ -49,30 +39,39 @@ $menu-content-bg-color: #F6F6F6;
     box-sizing: border-box;
     padding: 10px;
 
-    .menu-deroulant.estOuvert & {
-      transform: rotate(-180deg);
+    img {
+      width: auto;
+      height: auto;
     }
   }
 
   .contenu-menu {
-    display: none;
-    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
     background-color: $menu-content-bg-color;
     box-sizing: border-box;
-    padding: 20px;
-    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    animation: ouvrirMenu 0.3s ease-in-out forwards;
     color: #FF6060;
-
-    .menu-deroulant.estOuvert & {
-      display: flex;
-    }
 
     p {
       color: $menu-title-bg-color;
       font-size: 18px;
+      margin: 0;
+    }
+  }
+
+  &.estOuvert {
+    .fleche {
+      transform: rotate(-180deg);
+    }
+
+    .contenu-menu {
+      max-height: $max-height;
+      padding: 20px;
     }
   }
 

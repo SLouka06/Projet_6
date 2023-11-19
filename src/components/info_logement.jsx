@@ -19,26 +19,28 @@ const InfoLogement = ({ annonce }) => {
     return (
         <div className="info-logement">
             <div className="logement-top">
-                <div className="logement-header">
-                    <h1>{annonce.title}</h1>
-                    <p className="location">{annonce.location}</p>
+                <div className="logement-header-tags">
+                    <div className="logement-header">
+                        <h1>{annonce.title}</h1>
+                        <p className="location">{annonce.location}</p>
+                    </div>
+                    <div className="tags">
+                        {annonce.tags.map((tag, index) => (
+                            <span key={index} className="tag">{tag}</span>
+                        ))}
+                    </div>
                 </div>
-                <div className="host-info">
-                    <span className="host-name">{annonce.host.name}</span>
-                    <img 
-                        src={hoteImageSrc} 
-                        alt={`Hôte: ${annonce.host.name}`} 
-                        className="host-image" 
-                    />
+                <div className="host-rating-container">
+                    <div className="host-info">
+                        <span className="host-name">{annonce.host.name}</span>
+                        <img 
+                            src={hoteImageSrc} 
+                            alt={`Hôte: ${annonce.host.name}`} 
+                            className="host-image" 
+                        />
+                    </div>
+                    <div className="rating">{etoiles}</div>
                 </div>
-            </div>
-            <div className="tags-rating-container">
-                <div className="tags">
-                    {annonce.tags.map((tag, index) => (
-                        <span key={index} className="tag">{tag}</span>
-                    ))}
-                </div>
-                <div className="rating">{etoiles}</div>
             </div>
             <div className="menus-container">
                 <MenuDeroulant

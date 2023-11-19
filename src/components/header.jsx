@@ -1,10 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import '../styles/header.scss'; // Assurez-vous que le chemin est correct
-import logoImage from "../assets/LOGO.jpg"
-
+import '../styles/header.scss';
+import logoImage from "../assets/LOGO.jpg";
 
 function Header() {
+  const getNavLinkClass = ({ isActive }) => (isActive ? 'active' : '');
+
   return (
     <header className="header">
       <div className="logo">
@@ -14,8 +15,16 @@ function Header() {
       </div>
       <nav className="navigation">
         <ul>
-          <li><NavLink exact to="/" activeClassName="active">Accueil</NavLink></li>
-          <li><NavLink to="/a-propos" activeClassName="active">A Propos</NavLink></li>
+          <li>
+            <NavLink to="/" className={getNavLinkClass}>
+              Accueil
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/a-propos" className={getNavLinkClass}>
+              A Propos
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
@@ -23,3 +32,4 @@ function Header() {
 }
 
 export default Header;
+
